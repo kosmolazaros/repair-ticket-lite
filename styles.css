@@ -16,7 +16,7 @@ body {
 }
 
 .card {
-  border: 1px solid #ddd;
+  border: 1px solid #06cc09;
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 16px;
@@ -27,3 +27,15 @@ body {
   margin-top: 4px;
 }
 
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #f507074d;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
