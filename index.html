@@ -107,6 +107,37 @@
       <section class="card">
         <h2>Tickets</h2>
 
+        <div class="toolbar">
+          <div class="form-group">
+            <label for="searchInput">Search</label>
+            <input
+              id="searchInput"
+              name="search"
+              type="text"
+              placeholder="Search..."
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="statusFilter">Status</label>
+            <select id="statusFilter" name="statusFilter">
+              <option value="">All</option>
+              <option value="new">New</option>
+              <option value="in_progress">In Progress</option>
+              <option value="ready">Ready</option>
+              <option value="delivered">Delivered</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sortBy">Sort</label>
+            <select id="sortBy" name="sortBy">
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+            </select>
+          </div>
+        </div>
+
         <div id="ticketsList" class="tickets-list">
           <p class="muted">Καμία ενέργεια ακόμα.</p>
         </div>
