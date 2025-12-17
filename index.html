@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="el">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,8 +14,85 @@
 
     <main class="container">
       <section class="card">
-  <h2>Νέο Ticket</h2>
-  <p class="muted">(placeholder — αύριο βάζουμε φόρμα)</p>
+        <h2>New Ticket</h2>
+   <form id="ticketForm">
+    <div class="form-grid">
+     <div class="form-group">
+      <label for="customerName">Name</label>
+      <input 
+       id="customerName"
+       name="customerName"
+       type="text"
+       required
+       autocomplete="name"
+       />
+      <small class="error" data-error-for="customerName"></small>
+    </div>
+   
+   <div class="form-group">
+    <label for="phone">Phone</label>
+    <input
+    id="phone"
+    name="phone"
+    type="tel"
+    required
+    autocomplete="tel"
+    />
+    <small class="error" data-error-for="phone"></small>
+   </div>
+   
+   <div class="form-group">
+    <label for="device">Device</label>
+    <select id="device" name="device" required>
+     <option value="" selected disabled>Choose device</option>
+     <option value="phone">Phone</option>
+     <option value="laptop">Laptop</option>
+     <option value="tablet">Tablet</option>
+     <option value="other">Other</option>
+    </select>
+    <small class="error" data-error-for="device"></small>
+   </div>
+
+   <div class="form-group">
+     <label for="issue">Issue Description</label>
+     <textarea
+      id="issue"
+      name="issue"
+      required
+      minlength="10"
+      rows="4"
+      ></textarea>
+      <small class="error" data-error-for="issue"></small>
+    </div>
+
+   <div class="form-group">
+     <label for="status">Status</label>
+     <select id="status" name="status" required>
+      <option value="new">New</option>
+      <option value="in-progress">In Progress</option>
+      <option value="ready">Ready</option>
+      <option value="delivered">Delivered</option>
+     </select>
+     <small class="error" data-error-for="status"></small>
+   </div>
+  
+   <div class="form-group">
+     <label for="receivedDate">Received Date</label>
+     <input
+      id="receivedDate"
+      name="receivedDate"
+      type="date"
+      required
+      />
+      <small class="error" data-error-for="receivedDate"></small>
+    </div>
+   </div>
+   
+   <div class="row">
+    <button type="submit">Add Ticket</button>
+    <button type="reset">Clear</button>
+  </div>
+ </form>
 
   <div class="row">
     <button id="testBtn" type="button">Test JS</button>
@@ -25,7 +102,7 @@
   <p id="clickInfo" class="muted">Clicks: 0</p>
 </section>
 
-<section class="card">
+ <section class="card">
   <h2>Tickets</h2>
   <div id="ticketsList" class="tickets-list">
     <p class="muted">Καμία ενέργεια ακόμα.</p>
