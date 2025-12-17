@@ -1,26 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const testBtn = document.getElementById("testBtn");
-  const resetBtn = document.getElementById("resetBtn");
-  const ticketsList = document.getElementById("ticketsList");
-  const clickInfo = document.getElementById("clickInfo");
+const testBtn = document.querySelector("#testBtn");
+const counterResetBtn = document.querySelector("#counterResetBtn");
+const ticketsList = document.querySelector("#ticketsList");
+const clickInfo = document.querySelector("#clickInfo");
 
-  let clicks = 0;
+let counter = 0;
 
-  function render() {
-    clickInfo.textContent = `Clicks: ${clicks}`;
-  }
+testBtn.addEventListener("click", () => {
+  counter++;
+  clickInfo.textContent = `Clicks: ${counter}`;
+  ticketsList.textContent = "✅ JS δουλεύει! (Αύριο θα κάνουμε render tickets.)";
+});
 
-  testBtn.addEventListener("click", () => {
-    clicks += 1;
-    ticketsList.textContent = `JS OK ✅ (${new Date().toLocaleString()})`;
-    render();
-  });
-
-  resetBtn.addEventListener("click", () => {
-    clicks = 0;
-    ticketsList.innerHTML = `<p class="muted">Καμία ενέργεια ακόμα.</p>`;
-    render();
-  });
-
-  render();
+counterResetBtn.addEventListener("click", () => {
+  counter = 0;
+  clickInfo.textContent = `Clicks: ${counter}`;
 });
