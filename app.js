@@ -5,13 +5,23 @@ const clickInfo = document.querySelector("#clickInfo");
 
 let counter = 0;
 
-testBtn.addEventListener("click", () => {
-  counter++;
+function updateCounterText() {
   clickInfo.textContent = `Clicks: ${counter}`;
-  ticketsList.textContent = "✅ JS δουλεύει! (Αύριο θα κάνουμε render tickets.)";
-});
+}
 
-counterResetBtn.addEventListener("click", () => {
-  counter = 0;
-  clickInfo.textContent = `Clicks: ${counter}`;
-});
+if (!testBtn || !counterResetBtn || !ticketsList || !clickInfo) {
+  console.error("Missing required elements. Check ids in index.html.");
+} else {
+  updateCounterText();
+
+  testBtn.addEventListener("click", () => {
+    counter += 1;
+    updateCounterText();
+    ticketsList.textContent = "✅ JS OK. Next: render real tickets from form state.";
+  });
+
+  counterResetBtn.addEventListener("click", () => {
+    counter = 0;
+    updateCounterText();
+  });
+}
