@@ -39,3 +39,13 @@ button {
   gap: 10px;
   flex-wrap: wrap;
 }
+ 
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-group textarea {
+  display: block;
+  width: 100%;
+}
